@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-
-document.title = "PictoPass"
+//import fileInput from './components/fileInput';
 
 
 function App() {
   return (
     <div className="App">
       <h1>PictoPass</h1>
+      <div className = "inputPictureFile">
+        <input type = 'file'></input>
+      </div>
     </div>
   );
 }
