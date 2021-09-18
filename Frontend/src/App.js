@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import './Global.css';
 import FileInput from './components/FileInput';
-//import fileInput from './components/fileInput';
+
 
 
 function App() {
