@@ -43,11 +43,6 @@ export default class FileInput extends React.Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    //let reader = new FileReader();
-  }
-
   render(){
       return(
         <div>
