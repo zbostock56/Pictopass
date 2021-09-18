@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Global.css'
 
 //import ImagePreview from './ImagePreview'
 //Handle file submittions to be pushed to the backend API
@@ -12,7 +13,7 @@ export default class FileInput extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   handleChange(event) {
     this.setState({
       value: event.target.value,
@@ -31,7 +32,7 @@ export default class FileInput extends React.Component {
             </label>
           <input type = "submit" value = "Submit"/>
         </form>
-        <img src={this.state.file}></img>
+        <img id = "InputedPicture" src={this.state.file}></img>
       </div>
     )
   }
