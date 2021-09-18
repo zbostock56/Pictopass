@@ -35,4 +35,8 @@ router.post("/test", (req, res) => {
     res.send(req.body.canvas);
 });
 
+router.post("/hello", (req, res) => {
+    res.send(`Hello: ${req.body.name}`);
+});
+
 module.exports = router;
