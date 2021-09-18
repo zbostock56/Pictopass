@@ -1,10 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 
 //Handle file submittions to be pushed to the backend API
 
-export default class fileInput extends React.Component {
-
-    constructor(props){
+export default class FileInput extends React.Component {
+  constructor(props){
     super(props);
     this.state = {value: ''};
 
@@ -17,8 +17,13 @@ export default class fileInput extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A file was submitted: ' + this.state.value);
-    event.preventDefault();
+    axios.post('/test', {
+      
+    }).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
   render(){
@@ -32,5 +37,4 @@ export default class fileInput extends React.Component {
           </form>
       )
   }
-
 }
