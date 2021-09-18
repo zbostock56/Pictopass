@@ -1,5 +1,10 @@
 import React from 'react';
-import './Global.css';
+
+//Styles
+import '../src/styles/Global.css';
+import './styles/Background.scss';
+
+//Components
 import FileInput from './components/FileInput';
 
 
@@ -8,9 +13,7 @@ function App() {
   return (
     <div className="App">
       <h1>PictoPass</h1>
-      <div className = "inputPictureFile">
         <FileInput />
-      </div>
     </div>
   );
 }
