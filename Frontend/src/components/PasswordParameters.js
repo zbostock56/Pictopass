@@ -22,10 +22,25 @@ export default class PasswordParameters extends React.Component{
         console.log(this.state.value)
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+        //let reader = new FileReader();
+    }
+
     render(){
         return(
             <div>
-                
+                <form onSubmit = {this.handleSubmit}>
+                    <label>
+                        Amount of Password Characters
+                        <br/>
+                        <input 
+                        type = "number"
+                        name = "passwordLength"
+                        onChange = {this.handleChange}
+                        />
+                    </label>
+                </form>
             </div>
         )
     }
