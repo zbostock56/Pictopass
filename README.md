@@ -16,8 +16,11 @@ These instructions will get you a copy of the project up and running on your loc
 2. Install the dependencies
    `npm install`
 
-3. Start the server
-   `npm start`
+3. Start the frontend server
+   `npm run start`
+   
+4. Open another terminal to start backend server
+   `npm run devStart`
    
 
 ## Created by:
