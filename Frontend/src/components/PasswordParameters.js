@@ -42,6 +42,7 @@ export default class PasswordParameters extends React.Component{
                         <h3 className = "h3Style">Amount of Password Characters:</h3>
                         <br/>
                         <input 
+                        id = "NumberInput"
                         type = "number"
                         name = "passwordLength"
                         placeholder = "Insert Number"
