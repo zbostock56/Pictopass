@@ -20,6 +20,7 @@ router.post("/newImage", (req, res) => {
         }
         let passwordPool = genPasswordPool(pixData);
         let password = genPassword(passwordPool, length, image.bitmap.width, image.bitmap.height);
+        res.send(password);
     }).catch(err => {
         console.log(err);
         res.send({
@@ -68,7 +69,7 @@ const genPassword = (passwordPool, length, imgWidth, imgHeight) => {
         let y = Math.floor(Math.random() * imgHeight);
         password += passwordPool[x * y];
     }
-    console.log(password);
+    return password;
 }
 
 module.exports = router;
