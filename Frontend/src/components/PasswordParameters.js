@@ -45,7 +45,7 @@ export default class PasswordParameters extends React.Component{
                         id = "NumberInput"
                         type = "number"
                         name = "passwordLength"
-                        placeholder = "Insert Number"
+                        placeholder = "Insert Number and Press Enter"
                         onChange = {this.handleChange}
                         id = "CharactersPassword"
                         />
