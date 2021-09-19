@@ -64,12 +64,24 @@ const genPasswordPool = (pixData) => {
 
 const genPassword = (passwordPool, length, imgWidth, imgHeight) => {
     let password = "";
-    for(let i = 0; i < length; i++){
+    for (let i = 0; i < length; i++) {
         let x = Math.floor(Math.random() * imgWidth);
         let y = Math.floor(Math.random() * imgHeight);
         password += passwordPool[x * y];
     }
     return password;
 }
+
+// const genIdeal = (passwordPool, length, imgWidth, imgHeight) => {
+//     let ideal = "";
+//     for(let i = 0; i < 10; i++){
+//         let numSymbols = 0;
+//         let password = genPassword(passwordPool, length, imgWidth, imgHeight);
+//         for(let k = 0; k < password.length; k++){
+            
+//         }
+//     }
+//     return ideal;
+// }
 
 module.exports = router;
