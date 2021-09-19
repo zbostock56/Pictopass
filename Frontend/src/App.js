@@ -5,7 +5,7 @@ import '../src/styles/Global.css';
 import './styles/Background.scss';
 
 //Components
-import FileInput from './components/FileInput';
+import fileInput from './components/fileInput';
 import PasswordParameters from './components/PasswordParameters';
 
 class App extends React.Component {
@@ -27,7 +27,7 @@ class App extends React.Component {
     return(
       <div className="App">
         <h1>PictoPass</h1>
-          <FileInput passLength={this.state.passLength} />
+          <fileInput passLength={this.state.passLength} />
           <PasswordParameters /*updateLength={this.updateLength}*/ />
       </div>
     );
