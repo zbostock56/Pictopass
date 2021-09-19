@@ -13,7 +13,8 @@ export default class FileInput extends React.Component {
     super(props);
     this.state = {
       value: '',
-      file : null
+      file : null,
+      password: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,7 +37,11 @@ export default class FileInput extends React.Component {
       axios.post("http://localhost:5000/newImage", {
         file: data
       }).then(res => {
-        console.log(res.data);
+        this.setState({
+          value: this.state.value,
+          file: this.state.file,
+          password: res.data
+        });
       }).catch(err => {
         console.log(err);
       });
@@ -57,6 +62,8 @@ export default class FileInput extends React.Component {
                   onChange = {this.handleChange}
                 />  
             </label>
+            <p>{this.state.password}</p>
+            
             {/* Submit Button */}
           <input 
             className = "ButtonInput"

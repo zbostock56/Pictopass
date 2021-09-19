@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 //Styles
 import '../styles/Global.css'
@@ -13,18 +14,24 @@ export default class PasswordParameters extends React.Component{
             value: null,
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
         this.setState({
             value: event.target.value
         });
-        console.log(this.state.value)
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        //let reader = new FileReader();
+        axios.post("http://localhost:5000/updateLength", {
+            length: this.state.value
+        }).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        });
     }
 
     render(){
