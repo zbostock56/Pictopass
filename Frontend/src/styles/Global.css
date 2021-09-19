@@ -30,7 +30,6 @@ h1 {
   font-weight: bold;
 }
 
-
 .h3Style{
   /* Top, right, bottom, left */
   margin: 5px auto 0px auto;  
@@ -44,4 +43,8 @@ h1 {
   font-family: exo;
   font-weight: bold;
   align-items: center;
+}
+
+#image_input{
+  font-weight: bold;
 }

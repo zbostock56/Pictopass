@@ -47,18 +47,15 @@ export default class FileInput extends React.Component {
       return(
         <div>
         <form onSubmit={this.handleSubmit}>
-            {/*<label id = "LableFileInput">
-              Input File 
-              {/* Choose File Button
-                <input 
-                  type = "file" 
-                  className = "ButtonInput"
-                  onChange = {this.handleChange}
-                />
-            */}
             <label>
                 Input file
-                <input id="image_input" type = "file" onChange = {this.handleChange}/>
+                {/*Choose File Button*/}
+                <input 
+                  className = "ButtonInput"
+                  id = "image_input" 
+                  type = "file" 
+                  onChange = {this.handleChange}
+                />  
             </label>
             {/* Submit Button */}
           <input 
@@ -67,7 +64,11 @@ export default class FileInput extends React.Component {
             value = "Submit"
           />
         </form>
-        <img id = "InputedPicture" src={this.state.file}></img>
+        <img 
+          id = "InputedPicture" 
+          src={this.state.file}
+        />
+        
       </div>
     )
   }
