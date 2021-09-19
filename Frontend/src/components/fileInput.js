@@ -14,7 +14,8 @@ export default class FileInput extends React.Component {
     this.state = {
       value: '',
       file : null,
-      password: ""
+      password: "",
+      error: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,13 +38,22 @@ export default class FileInput extends React.Component {
       axios.post("http://localhost:5000/newImage", {
         file: data
       }).then(res => {
-        this.setState({
-          value: this.state.value,
-          file: this.state.file,
-          password: res.data
-        });
+        if (res.data.status == 200) {
+          this.setState({
+            value: this.state.value,
+            file: this.state.file,
+            password: res.data.password,
+            error: ""
+          });
+        } else {
+          this.setState({
+            error: "Oops! Image failed to load, try again!"
+          });
+        }
       }).catch(err => {
-        console.log(err);
+        this.setState({
+          error: "Oops! Image failed to load, try again!"
+        });
       });
     });
   }
@@ -74,6 +84,7 @@ export default class FileInput extends React.Component {
           <img id="InputedPicture" src={this.state.file}></img>
         </div>
         <h3 id = "GeneratedPassword">Generated Password:</h3>
+        <h5>{this.state.error}</h5>
         <p className="output">{this.state.password}</p>
       </div>
     )

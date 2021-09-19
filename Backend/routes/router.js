@@ -20,9 +20,11 @@ router.post("/newImage", (req, res) => {
         }
         let passwordPool = genPasswordPool(pixData);
         let password = genIdeal(passwordPool, length, image.bitmap.width, image.bitmap.height)
-        res.send(password);
+        res.send({
+            status: 200,
+            password: password
+        });
     }).catch(err => {
-        console.log(err);
         res.send({
             status: 500,
             message: "Input is not an image"
