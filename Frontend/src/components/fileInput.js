@@ -8,7 +8,7 @@ import '../styles/Global.css'
 Handle file submittions to be pushed to the backend API
 */
 
-export default class fileInput extends React.Component {
+export default class FileInput extends React.Component {
   constructor(props){
     super(props);
     this.state = {
