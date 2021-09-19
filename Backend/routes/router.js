@@ -75,7 +75,7 @@ const genPassword = (passwordPool, length, imgWidth, imgHeight) => {
 const genIdeal = (passwordPool, length, imgWidth, imgHeight) => {
     let idealScore = 0;
     let ideal = "";
-    for(let i = 0; i < 10; i++){
+    for(let i = 0; i < 1000; i++){
         let score = 10;
         let numSymbols = 0;
         let repeats = 0;
@@ -95,7 +95,7 @@ const genIdeal = (passwordPool, length, imgWidth, imgHeight) => {
             }
         }
         score += (numSymbols/(password.length - numSymbols)) * (7.5);
-        score *= 1 - (repeats * 0.001);
+        score *= 1 - (repeats * 0.05);
         if(score > idealScore){
             idealScore = score;
             ideal = password;
