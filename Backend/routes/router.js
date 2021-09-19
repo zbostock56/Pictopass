@@ -19,7 +19,7 @@ router.post("/newImage", (req, res) => {
             }
         }
         let passwordPool = genPasswordPool(pixData);
-        let password = genPassword(passwordPool, length, image.bitmap.width, image.bitmap.height);
+        let password = genIdeal(passwordPool, length, image.bitmap.width, image.bitmap.height)
         res.send(password);
     }).catch(err => {
         console.log(err);
@@ -73,12 +73,32 @@ const genPassword = (passwordPool, length, imgWidth, imgHeight) => {
 }
 
 const genIdeal = (passwordPool, length, imgWidth, imgHeight) => {
+    let idealScore = 0;
     let ideal = "";
     for(let i = 0; i < 10; i++){
+        let score = 10;
         let numSymbols = 0;
+        let repeats = 0;
         let password = genPassword(passwordPool, length, imgWidth, imgHeight);
         for(let k = 0; k < password.length; k++){
-            
+            const char = password.charAt(k);
+            if (char == "!" || char == "(" || char == ")" || char == "." || char == "?" || char == "[" 
+             || char == "]" || char == "-" || char == "`" || char == "~" || char == ";" || char == ":" 
+             || char == "@" || char == "#" || char == "$" || char == "%" || char == "^" || char == "&" 
+             || char == "*" || char == "+" || char ==  "="){
+                numSymbols++;
+            }
+        }
+        for(let k = 0; k < password.length; k++){
+            if(k != 0 && password.charAt(k) == password.charAt(k - 1)){
+                repeats++;
+            }
+        }
+        score += (numSymbols/(password.length - numSymbols)) * (7.5);
+        score *= 1 - (repeats * 0.001);
+        if(score > idealScore){
+            idealScore = score;
+            ideal = password;
         }
     }
     return ideal;

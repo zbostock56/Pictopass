@@ -1,8 +1,1 @@
-POST http://localhost:5000/newImage HTTP/1.1
-Content-Type: application/json
-
-{
-    "name": "Jack"
-}
-
-###
+GET http://localhost:5000/testRanks HTTP/1.1
