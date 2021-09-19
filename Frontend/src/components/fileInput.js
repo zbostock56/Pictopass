@@ -14,7 +14,8 @@ export default class FileInput extends React.Component {
     this.state = {
       value: '',
       file : null,
-      password: ""
+      password: "",
+      loading: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,13 +35,17 @@ export default class FileInput extends React.Component {
     
     reader.addEventListener("load", () => {
       let data = reader.result;
+      this.setState({
+        loading: true
+      });
       axios.post("http://localhost:5000/newImage", {
         file: data
       }).then(res => {
         this.setState({
           value: this.state.value,
           file: this.state.file,
-          password: res.data
+          password: res.data,
+          loading: false
         });
       }).catch(err => {
         console.log(err);
@@ -53,15 +58,14 @@ export default class FileInput extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
             <label>
-                Input file
-                <br/>
+                <h2 id = "InputFileHeader">Turning Pictures into Privacy</h2>
                 {/*Choose File Button*/}
                 <input 
                   className = "ButtonInput"
                   id = "image_input" 
                   type = "file" 
                   onChange = {this.handleChange}
-                />  
+                />
             </label>
             
             {/* Submit Button */}
@@ -74,8 +78,9 @@ export default class FileInput extends React.Component {
         <div className="picture_frame">
           <img id="InputedPicture" src={this.state.file}></img>
         </div>
-        <h3 id="GeneratedPassword">Generated Password:</h3>
-          <p className="output">{this.state.password}</p>
+        <p id = "loading">Loading image...</p>
+        <h3 id = "GeneratedPassword">Generated Password:</h3>
+        <p className="output">{this.state.password}</p>
       </div>
     )
   }
