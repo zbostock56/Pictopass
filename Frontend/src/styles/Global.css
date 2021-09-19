@@ -30,7 +30,6 @@ h1 {
   font-weight: bold;
 }
 
-
 .h3Style{
   /* Top, right, bottom, left */
   margin: 5px auto 0px auto;  
@@ -53,4 +52,8 @@ h1 {
 .output {
   margin-top: 1rem;
   margin-bottom: 0px;
+}
+
+#image_input{
+  font-weight: bold;
 }
