@@ -28,7 +28,6 @@ class App extends React.Component {
       <div className="App">
         <h1>PictoPass</h1>
           <FileInput passLength={this.state.passLength} />
-          <br/>
           <PasswordParameters /*updateLength={this.updateLength}*/ />
       </div>
     );

@@ -49,8 +49,8 @@ export default class FileInput extends React.Component {
   }
 
   render(){
-      return(
-        <div>
+    return(
+      <div>
         <form onSubmit={this.handleSubmit}>
             {/*<label id = "LableFileInput">
               Input File 
@@ -65,7 +65,6 @@ export default class FileInput extends React.Component {
                 Input file
                 <input id="image_input" type = "file" onChange = {this.handleChange}/>
             </label>
-            <p>{this.state.password}</p>
             
             {/* Submit Button */}
           <input 
@@ -74,7 +73,10 @@ export default class FileInput extends React.Component {
             value = "Submit"
           />
         </form>
-        <img id = "InputedPicture" src={this.state.file}></img>
+        <div className="picture_frame">
+          <img id="InputedPicture" src={this.state.file}></img>
+        </div>
+        <p className="output">{this.state.password}</p>
       </div>
     )
   }
