@@ -54,6 +54,7 @@ export default class FileInput extends React.Component {
         <form onSubmit={this.handleSubmit}>
             <label>
                 Input file
+                <br/>
                 {/*Choose File Button*/}
                 <input 
                   className = "ButtonInput"
@@ -71,10 +72,12 @@ export default class FileInput extends React.Component {
             value = "Submit"
           />
         </form>
-        <img 
-          id = "InputedPicture" 
-          src={this.state.file}
-        />
+        <div id = "Opaque">
+          <img 
+            id = "InputedPicture" 
+            src={this.state.file}
+          />
+        </div>
         
       </div>
     )
