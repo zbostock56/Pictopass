@@ -72,16 +72,16 @@ const genPassword = (passwordPool, length, imgWidth, imgHeight) => {
     return password;
 }
 
-// const genIdeal = (passwordPool, length, imgWidth, imgHeight) => {
-//     let ideal = "";
-//     for(let i = 0; i < 10; i++){
-//         let numSymbols = 0;
-//         let password = genPassword(passwordPool, length, imgWidth, imgHeight);
-//         for(let k = 0; k < password.length; k++){
+const genIdeal = (passwordPool, length, imgWidth, imgHeight) => {
+    let ideal = "";
+    for(let i = 0; i < 10; i++){
+        let numSymbols = 0;
+        let password = genPassword(passwordPool, length, imgWidth, imgHeight);
+        for(let k = 0; k < password.length; k++){
             
-//         }
-//     }
-//     return ideal;
-// }
+        }
+    }
+    return ideal;
+}
 
 module.exports = router;
