@@ -74,5 +74,5 @@ h1 {
 #InputFileHeader{
   font-weight: bold;
   margin-top: -15px;
-  margin-bottom: 30px;
+  margin-bottom: calc(30px - 1rem);
 }
