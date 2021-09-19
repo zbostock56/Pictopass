@@ -51,9 +51,10 @@ h1 {
 
 .output {
   margin-top: 1rem;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   font-weight: bold;
   font-size: larger;
+
 }
 
 #image_input{
@@ -66,5 +67,5 @@ h1 {
 
 #GeneratedPassword{
   margin-bottom: 20px;
-  
+
 }

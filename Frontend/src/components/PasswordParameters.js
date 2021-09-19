@@ -39,7 +39,7 @@ export default class PasswordParameters extends React.Component{
             <div>
                 <form onSubmit = {this.handleSubmit}>
                     <label>
-                        <h3 className = "h3Style">Amount of Password Characters</h3>
+                        <h3 className = "h3Style">Amount of Password Characters:</h3>
                         <br/>
                         <input 
                         type = "number"
