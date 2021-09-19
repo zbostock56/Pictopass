@@ -74,6 +74,7 @@ export default class FileInput extends React.Component {
         <div className="picture_frame">
           <img id="InputedPicture" src={this.state.file}></img>
         </div>
+        <h3 id = "GeneratedPassword">Generated Password:</h3>
         <p className="output">{this.state.password}</p>
       </div>
     )
