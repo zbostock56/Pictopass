@@ -22,6 +22,10 @@ These instructions will get you a copy of the project up and running on your loc
 4. Open another terminal to start backend server
    `npm run devStart`
    
+### Known Bugs
+- There is an error when cloning this repository where the FileInput.js file turns to fileInput.js, despite being renamed when the project was created
+- Change to FileInput.js which will fix the bug and stop errors when running
+   
 
 ## Created by:
 ### [Zack Bostock](https://github.com/zbostock56)
