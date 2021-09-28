@@ -33,6 +33,8 @@ These instructions will get you a copy of the project up and running on your loc
    
 ### Known Bugs
 - There is an error when cloning this repository where the FileInput.js file turns to fileInput.js, despite being renamed when the project was created
+
+### Known Workarounds
 - Change to FileInput.js which will fix the bug and stop errors when running
    
 
